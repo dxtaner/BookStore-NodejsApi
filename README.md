@@ -1,72 +1,87 @@
+Book Node.js Project Description
+================================
 
-Book Nodejs Proje Açıklaması
-================
+Getting Started
+---------------
 
-Başlangıç
----------
+1.  Clone the project:
 
-1.  Projeyi klonlayın:
-`git clone <proje-repo-url>`3.  Proje dizinine gidin:
-`cd <proje-dizini>`5.  Gerekli bağımlılıkları yükleyin:
-`npm install`7.  MongoDB bağlantı URL'sini `.env` dosyasına ekleyin:
-`DB_URL=<mongodb-baglanti-urlsi>`9.  Uygulamayı çalıştırın:
-`npm start`
+    git clone (https://github.com/dxtaner/BookStore-NodejsApi)
 
-API Rotaları
-------------
+3.  Navigate to the project directory:
 
-*   **Kullanıcılar (Users):**
-    *   `GET /api/users`: Tüm kullanıcıları listeler.
-    *   `GET /api/users/:id`: Belirli bir kullanıcıyı getirir.
-    *   `POST /api/users`: Yeni bir kullanıcı oluşturur.
-    *   `PUT /api/users/:id`: Belirli bir kullanıcının bilgilerini günceller.
-    *   `DELETE /api/users/:id`: Belirli bir kullanıcıyı siler.
-*   **Yazarlar (Authors):**
-    *   `GET /api/authors`: Tüm yazarları listeler.
-    *   `GET /api/authors/:id`: Belirli bir yazarı getirir.
-    *   `POST /api/authors`: Yeni bir yazar oluşturur.
-    *   `PUT /api/authors/:id`: Belirli bir yazarın bilgilerini günceller.
-    *   `DELETE /api/authors/:id`: Belirli bir yazarı siler.
-*   **Kitaplar (Books):**
-    *   `GET /api/books`: Tüm kitapları listeler.
-    *   `GET /api/books/:id`: Belirli bir kitabı getirir.
-    *   `POST /api/books`: Yeni bir kitap oluşturur.
-    *   `PUT /api/books/:id`: Belirli bir kitabın bilgilerini günceller.
-    *   `DELETE /api/books/:id`: Belirli bir kitabı siler.
+    cd BookStore-NodejsApi
 
-Veri Modeli
------------
+5.  Install dependencies:
 
-Proje, MongoDB veritabanında aşağıdaki veri modelini kullanmaktadır:
+    npm install
 
-#### Kullanıcı (User) Veri Modeli:
+7.  Add the MongoDB connection URL to the `.env` file:
 
-*   `name`: Kullanıcının adı (String).
-*   `email`: Kullanıcının e-posta adresi (String).
-*   `age`: Kullanıcının yaşı (Number).
+    DB_URL=<mongodb-connection-url>
 
-#### Yazar (Author) Veri Modeli:
+9.  Start the application:
 
-*   `name`: Yazarın adı (String).
-*   `birthDate`: Yazarın doğum tarihi (Date).
-*   `nationality`: Yazarın vatandaşı olduğu ülke (String).
+    npm start
 
-#### Kitap (Book) Veri Modeli:
+API Routes
+----------
 
-*   `title`: Kitabın başlığı (String).
-*   `author`: Kitabın yazarı (Referans olarak Yazar veri modeline atıfta bulunur).
-*   `publicationDate`: Kitabın yayınlanma tarihi (Date).
-*   `genre`: Kitabın türü (String).
+### Users
 
-Ek Bilgiler
------------
+*   `GET /api/users` - Lists all users.
+*   `GET /api/users/:id` - Retrieves a specific user.
+*   `POST /api/users` - Creates a new user.
+*   `PUT /api/users/:id` - Updates a specific user's information.
+*   `DELETE /api/users/:id` - Deletes a specific user.
 
-*   Proje MongoDB veritabanını kullanmaktadır. Veritabanı bağlantısı için `DB_URL` çevresel değişkeni kullanılır.
-*   Proje, Express.js ile geliştirilmiştir ve HTTP isteklerini işlemek için Express yönlendiricilerini kullanır.
-*   Kullanıcılar, yazarlar ve kitaplar için ayrı yönlendiriciler (routes) bulunmaktadır.
-*   Veri modelleri ve yönlendiriciler `/models` ve `/routes` klasörlerinde yer almaktadır.
+### Authors
 
-Lisans
-------
+*   `GET /api/authors` - Lists all authors.
+*   `GET /api/authors/:id` - Retrieves a specific author.
+*   `POST /api/authors` - Creates a new author.
+*   `PUT /api/authors/:id` - Updates a specific author's information.
+*   `DELETE /api/authors/:id` - Deletes a specific author.
 
-Bu proje [MIT Lisansı](https://opensource.org/licenses/MIT) ile lisanslanmıştır. Daha fazla bilgi için `LICENSE` dosyasını inceleyebilirsiniz.
+### Books
+
+*   `GET /api/books` - Lists all books.
+*   `GET /api/books/:id` - Retrieves a specific book.
+*   `POST /api/books` - Creates a new book.
+*   `PUT /api/books/:id` - Updates a specific book's information.
+*   `DELETE /api/books/:id` - Deletes a specific book.
+
+Data Model
+----------
+
+### User Model
+
+*   `name` - User's name (String).
+*   `email` - User's email address (String).
+*   `age` - User's age (Number).
+
+### Author Model
+
+*   `name` - Author's name (String).
+*   `birthDate` - Author's date of birth (Date).
+*   `nationality` - Author's nationality (String).
+
+### Book Model
+
+*   `title` - Book title (String).
+*   `author` - Reference to the Author model.
+*   `publicationDate` - Book's publication date (Date).
+*   `genre` - Book's genre (String).
+
+Additional Information
+----------------------
+
+*   The project uses a MongoDB database. The connection is set via the `DB_URL` environment variable.
+*   Built with Express.js, using routers to handle HTTP requests.
+*   Separate routes are available for users, authors, and books.
+*   Data models and routes are located in the `/models` and `/routes` directories.
+
+License
+-------
+
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). For more details, see the `LICENSE` file.
